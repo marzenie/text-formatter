@@ -59,7 +59,7 @@ def change_letter(letter):
     letters_line_top = [243, 263, 324, 347, 378]  # ó, ć, ń, ś, ź
     letters_tails = [261, 281] # ą, ę
     replace_letters_tails = [97, 101] # a, e
-    replace_letters_top = [111, 99, 110, 115, 122]# ó, ć, ń, ś, ź
+    replace_letters_top = [111, 99, 110, 115, 122]# o, c, n, s, z
     ord_letter=ord(letter)
     try: # replace letters_line_top to diacritic letters
         replace_letter_index = letters_line_top.index(ord_letter)
