@@ -14,7 +14,7 @@ def main():
     root.geometry("800x600")
     root.resizable(False, False)
     # Create a large text area
-    text_area = tk.Text(root, wrap='word', height=30, width=97)
+    text_area = tk.Text(root, wrap='word', font=("Cambria", 14) , height=21, width=70)
     text_area.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
     # Function to handle button click event
