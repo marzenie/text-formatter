@@ -111,12 +111,6 @@ def add_effect(letter, effect):
                 return chr(ord_letter + 52 + diff_letter + additionall_big_letters_diff) + diacritic
             return chr(ord_letter + 52 + diff_letter) + diacritic
             
-        elif (effect == 3):
-            if ((status['italic'] == True) and (status['bold'] == True)):
-                return letter
-            if (status['size'] == "B"): 
-                return chr(ord_letter + 104 + diff_letter + additionall_big_letters_diff) + diacritic
-            return chr(ord_letter + 104 + diff_letter) + diacritic
         else:
             return letter
     return letter 
@@ -152,12 +146,6 @@ def remove_effect(letter, effect):
             if (status['size'] == "B"): 
                 return chr(ord_letter - 52 - diff_letter - additionall_big_letters_diff) + diacritic
             return chr(ord_letter - 52 - diff_letter) + diacritic
-        elif (effect == 3):
-            if ((status['italic'] == False) and (status['bold'] == False)):
-                return letter
-            if (status['size'] == "B"): 
-                return chr(ord_letter - 104 - diff_letter - additionall_big_letters_diff) + diacritic
-            return chr(ord_letter - 104 - diff_letter) + diacritic
         else:
             return letter
     return letter
