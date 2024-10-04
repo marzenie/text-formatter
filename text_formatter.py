@@ -2,6 +2,7 @@ import json
 import tkinter as tk
 
 diff_letter = 120205
+diff_number = 120734
 additionall_big_letters_diff = 6
     
 def main():
@@ -49,7 +50,6 @@ def main():
     # Start the GUI event loop
     root.mainloop()
 
-
 def get_selected(text_area):
     if text_area.tag_ranges(tk.SEL):
         content = text_area.selection_get()
@@ -95,6 +95,11 @@ def add_effect(letter, effect):
         if (effect == 1): # add bold from text
             if (status['bold'] == True): 
                 return letter
+            if (status['size'] == "N"): 
+                #if(status['italic'] == True): # currently there is no font that contains italics in numbers
+                    # return
+                return chr(ord_letter + diff_number)
+                
             if (status['italic'] == True): 
                 return chr(ord_letter + 52)
             if (status['size'] == "B"): 
@@ -104,7 +109,9 @@ def add_effect(letter, effect):
         elif (effect == 2):  # add italic from text
             if (status['italic'] == True):
                 return letter
-            if (status['bold'] == True): 
+            if (status['size'] == "N"):  # currently there is no font that contains italics in numbers
+                return letter
+            if (status['bold'] == True: 
                 return chr(ord_letter + 104)
                 
             if (status['size'] == "B"): 
@@ -129,6 +136,10 @@ def remove_effect(letter, effect):
         if (effect == 1): # remove bold from text
             if (status['bold'] == False):
                 return letter
+            if (status['size'] == "N"): 
+                #if(status['italic'] == True): # currently there is no font that contains italics in numbers
+                    # return
+                return chr(ord_letter - diff_number)
             if (status['italic'] == True): 
                 return chr(ord_letter - 52)
                 
@@ -139,6 +150,8 @@ def remove_effect(letter, effect):
             
         elif (effect == 2):  # remove italic from text
             if (status['italic'] == False):
+                return letter
+            if (status['size'] == "N"):  # currently there is no font that contains italics in numbers
                 return letter
             if (status['bold'] == True): 
                 return chr(ord_letter - 104)
@@ -162,6 +175,8 @@ def check_current_effects(letter):
     bold&italic | a-z 1D656-1D66F   |   120406-120431
     """
     ord_letter=ord(letter[0])
+    if (ord_letter in range(48, 58)): # normal numbers 48 - 57 + 1
+        return { "size": "N", "bold": False, "italic": False }
     if (ord_letter in range(65, 91)): # bcs 90 need to be in range
         return { "size": "B", "bold": False, "italic": False }
     if (ord_letter in range(97, 123)): # bcs 122 need to be in range
@@ -179,7 +194,9 @@ def check_current_effects(letter):
             return { "size": "B", "bold": True, "italic": True }
         elif ord_letter <= 120431:
             return { "size": "S", "bold": True, "italic": True }
-
+    if (ord_letter in range(120782, 120792)): # bold numbers 120782 - 120791 +1 to be in range
+        return { "size": "N", "bold": True, "italic": False }
+        
     return { "error": True }
     
 if __name__ == "__main__":

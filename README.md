@@ -5,6 +5,7 @@ you can copy text anywhere on the internet.
 This is an ideal solution for text formatting on pages that do not provide it themselves.
 
 * Supports bold text
+* Supports bold in numbers
 * Supports italics
 * Supports small Polish characters
   
