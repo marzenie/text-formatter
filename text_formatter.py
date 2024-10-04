@@ -111,7 +111,7 @@ def add_effect(letter, effect):
                 return letter
             if (status['size'] == "N"):  # currently there is no font that contains italics in numbers
                 return letter
-            if (status['bold'] == True: 
+            if status['bold'] == True: 
                 return chr(ord_letter + 104)
                 
             if (status['size'] == "B"): 
