@@ -7,6 +7,7 @@ This is an ideal solution for text formatting on pages that do not provide it th
 * Supports bold text
 * Supports bold in numbers
 * Supports italics
+* Supports underline
 * Supports small Polish characters
   
 ![image](https://github.com/user-attachments/assets/ddb0c83c-8216-42f1-9246-28c2984f1389)
