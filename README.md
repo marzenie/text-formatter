@@ -6,7 +6,7 @@ This is an ideal solution for text formatting on pages that do not provide it th
 
 * Supports bold text
 * Supports bold in numbers
-* Supports italics
+* Supports italics text
 * Supports underline
 * Supports small Polish characters
   
